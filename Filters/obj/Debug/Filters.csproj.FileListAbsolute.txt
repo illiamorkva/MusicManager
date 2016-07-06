@@ -1,0 +1,9 @@
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\Filters\bin\Debug\Filters.dll
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\Filters\bin\Debug\Filters.pdb
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\Filters\obj\Debug\Filters.dll
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\Filters\obj\Debug\Filters.pdb
+D:\MusicManager\Filters\bin\Debug\Filters.dll
+D:\MusicManager\Filters\bin\Debug\Filters.pdb
+D:\MusicManager\Filters\obj\Debug\Filters.csprojResolveAssemblyReference.cache
+D:\MusicManager\Filters\obj\Debug\Filters.dll
+D:\MusicManager\Filters\obj\Debug\Filters.pdb

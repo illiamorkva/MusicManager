@@ -1,0 +1,44 @@
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\bin\Debug\MusicManager.exe.config
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MusicManager.csprojResolveAssemblyReference.cache
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MainWindow1.baml
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\Oprog.baml
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MainWindow1.g.cs
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\Oprog.g.cs
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\App.g.cs
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MusicManager_MarkupCompile.cache
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MusicManager.g.resources
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MusicManager.Properties.Resources.resources
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MusicManager.csproj.GenerateResource.Cache
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\Interop.WMPLib.dll
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MusicManager.csproj.ResolveComReference.cache
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\bin\Debug\MusicManager.exe
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\bin\Debug\MusicManager.pdb
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\bin\Debug\Filters.dll
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\bin\Debug\Filters.pdb
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MusicManager.exe
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\MusicManager.pdb
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\Themes\Dictionary1.baml
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\Themes\Dictionary2.baml
+c:\users\илья\documents\visual studio 2012\Projects\MusicManager\MusicManager\obj\Debug\App.baml
+D:\MusicManager\MusicManager\bin\Debug\MusicManager.exe.config
+D:\MusicManager\MusicManager\obj\Debug\Interop.WMPLib.dll
+D:\MusicManager\MusicManager\obj\Debug\MusicManager.csproj.ResolveComReference.cache
+D:\MusicManager\MusicManager\obj\Debug\MusicManager.exe
+D:\MusicManager\MusicManager\obj\Debug\MusicManager.pdb
+D:\MusicManager\MusicManager\bin\Debug\MusicManager.exe
+D:\MusicManager\MusicManager\bin\Debug\MusicManager.pdb
+D:\MusicManager\MusicManager\bin\Debug\Filters.dll
+D:\MusicManager\MusicManager\bin\Debug\Filters.pdb
+D:\MusicManager\MusicManager\obj\Debug\MusicManager.csprojResolveAssemblyReference.cache
+D:\MusicManager\MusicManager\obj\Debug\MainWindow1.baml
+D:\MusicManager\MusicManager\obj\Debug\Oprog.baml
+D:\MusicManager\MusicManager\obj\Debug\Themes\Dictionary1.baml
+D:\MusicManager\MusicManager\obj\Debug\Themes\Dictionary2.baml
+D:\MusicManager\MusicManager\obj\Debug\App.baml
+D:\MusicManager\MusicManager\obj\Debug\MainWindow1.g.cs
+D:\MusicManager\MusicManager\obj\Debug\Oprog.g.cs
+D:\MusicManager\MusicManager\obj\Debug\App.g.cs
+D:\MusicManager\MusicManager\obj\Debug\MusicManager_MarkupCompile.cache
+D:\MusicManager\MusicManager\obj\Debug\MusicManager.g.resources
+D:\MusicManager\MusicManager\obj\Debug\MusicManager.Properties.Resources.resources
+D:\MusicManager\MusicManager\obj\Debug\MusicManager.csproj.GenerateResource.Cache
