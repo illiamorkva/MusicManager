@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MusicManager
 {
     class MusicID3Tag
     {
-        public byte[] TAGID = new byte[3];
+        public byte[] Tagid = new byte[3];
         public byte[] Title = new byte[30];
         public byte[] Artist = new byte[30];
         public byte[] Album = new byte[30];

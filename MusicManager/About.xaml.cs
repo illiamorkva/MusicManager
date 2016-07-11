@@ -5,16 +5,16 @@ using System.Windows.Input;
 namespace MusicManager
 {
     /// <summary>
-    /// Логика взаимодействия для Oprog.xaml
+    /// Логика взаимодействия для About.xaml
     /// </summary>
-    public partial class Oprog : Window
+    public partial class About : Window
     {
-        public Oprog()
+        public About()
         {
             InitializeComponent();
         }
 
-        private void Border_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        private void BorderMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
@@ -24,7 +24,7 @@ namespace MusicManager
             Hide();
         }
 
-        private void Window_Closed_1(object sender, EventArgs e)
+        private void WindowClosed(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
         }

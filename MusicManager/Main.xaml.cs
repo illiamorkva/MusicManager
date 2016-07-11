@@ -17,7 +17,7 @@ namespace MusicManager
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow1 : Window
+    public partial class Main : Window
     {
         internal WindowsMediaPlayer Wmp;
         private string regex = @"[0-9]", _playerUml;
@@ -26,20 +26,20 @@ namespace MusicManager
         private Music objectMusic;
         System.Timers.Timer timer = new System.Timers.Timer(1000);
 
-        public MainWindow1()
+        public Main()
         {
             InitializeComponent();
             objectMusic = new Music();
             Wmp = new WindowsMediaPlayer();
-            timer.Elapsed += timer_Elapsed;
+            timer.Elapsed += TimerElapsed;
         }
 
-        void timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        void TimerElapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             Dispatcher.Invoke(DispatcherPriority.Normal, (Action)(() =>
             {
-                slider1.Maximum = Convert.ToInt32(Wmp.currentMedia.duration);
-                slider1.Value = Convert.ToInt32(Wmp.controls.currentPosition);
+                Slider1.Maximum = Convert.ToInt32(Wmp.currentMedia.duration);
+                Slider1.Value = Convert.ToInt32(Wmp.controls.currentPosition);
 
                 if (Wmp != null)
                 {
@@ -47,65 +47,65 @@ namespace MusicManager
                     int h = s / 3600;
                     int m = (s - (h * 3600)) / 60;
                     s = s - (h * 3600 + m * 60);
-                    lab_music_stat1.Content = $"{h:D}:{m:D2}:{s:D2}";
+                    LabMusicStat1.Content = $"{h:D}:{m:D2}:{s:D2}";
 
                     s = (int)Wmp.controls.currentPosition;
                     h = s / 3600;
                     m = (s - (h * 3600)) / 60;
                     s = s - (h * 3600 + m * 60);
-                    lab_music_stat2.Content = $"{h:D}:{m:D2}:{s:D2}";
+                    LabMusicStat2.Content = $"{h:D}:{m:D2}:{s:D2}";
                 }
                 else
                 {
-                    lab_music_stat2.Content = "0:00:00";
-                    lab_music_stat1.Content = "0:00:00";
+                    LabMusicStat2.Content = "0:00:00";
+                    LabMusicStat1.Content = "0:00:00";
                 }
             }));
         }
 
 
         // Search
-        private async void Button_Click_1(object sender, RoutedEventArgs e)
+        private async void SearchMusicClick(object sender, RoutedEventArgs e)
         {
-            idmusic.Visibility = Visibility.Visible;
-            idprogres.Visibility = Visibility.Visible;
+            Idmusic.Visibility = Visibility.Visible;
+            Idprogres.Visibility = Visibility.Visible;
 
-            int selectSearch = searchcombo.SelectedIndex;
+            int selectSearch = Searchcombo.SelectedIndex;
             switch (selectSearch)
             {
                 case 0:
                     FullFilters fullFilters = new FullFilters
                     {
-                        SearchPatternIspol = text_ispol.Text,
-                        SearchPatternName = textname.Text,
-                        SearchPatternYear = textyear.Text,
-                        SearchPatternZanre = text_zanr.Text
+                        SearchPatternIspol = TextIspol.Text,
+                        SearchPatternName = Textname.Text,
+                        SearchPatternYear = Textyear.Text,
+                        SearchPatternZanre = TextZanr.Text
                     };
                     _filter = fullFilters;
                     break;
                 case 1:
-                    IspolFilters ispolFilters = new IspolFilters { SearchPattern = text_ispol.Text };
+                    IspolFilters ispolFilters = new IspolFilters { SearchPattern = TextIspol.Text };
                     _filter = ispolFilters;
                     break;
                 case 2:
-                    ZanreFilters zanreFilters = new ZanreFilters { SearchPattern = text_zanr.Text };
+                    ZanreFilters zanreFilters = new ZanreFilters { SearchPattern = TextZanr.Text };
                     _filter = zanreFilters;
                     break;
                 case 3:
-                    NameFilters nameFilters = new NameFilters { SearchPattern = textname.Text };
+                    NameFilters nameFilters = new NameFilters { SearchPattern = Textname.Text };
                     _filter = nameFilters;
                     break;
                 case 4:
-                    YearFilters yearFilters = new YearFilters { SearchPattern = textyear.Text };
+                    YearFilters yearFilters = new YearFilters { SearchPattern = Textyear.Text };
                     _filter = yearFilters;
                     break;
                 case 5:
                     PartialFilters partialFilters = new PartialFilters
                     {
-                        SearchPatternIspol = text_ispol.Text,
-                        SearchPatternName = textname.Text,
-                        SearchPatternYear = textyear.Text,
-                        SearchPatternZanre = text_zanr.Text
+                        SearchPatternIspol = TextIspol.Text,
+                        SearchPatternName = Textname.Text,
+                        SearchPatternYear = Textyear.Text,
+                        SearchPatternZanre = TextZanr.Text
                     };
                     _filter = partialFilters;
                     break;
@@ -113,7 +113,7 @@ namespace MusicManager
             }
 
             string format = ".mp3";
-            if (_mp4.IsChecked == true)
+            if (Mp4.IsChecked == true)
             {
                 format = ".mp4";
             }
@@ -132,14 +132,14 @@ namespace MusicManager
                         MusicID3Tag tag = new MusicID3Tag();
 
                         fs.Seek(-128, SeekOrigin.End);
-                        fs.Read(tag.TAGID, 0, tag.TAGID.Length);
+                        fs.Read(tag.Tagid, 0, tag.Tagid.Length);
                         fs.Read(tag.Title, 0, tag.Title.Length);
                         fs.Read(tag.Artist, 0, tag.Artist.Length);
                         fs.Read(tag.Album, 0, tag.Album.Length);
                         fs.Read(tag.Year, 0, tag.Year.Length);
                         fs.Read(tag.Duration, 0, tag.Duration.Length);
                         fs.Read(tag.Genre, 0, tag.Genre.Length);
-                        string theTagid = Encoding.Default.GetString(tag.TAGID);
+                        string theTagid = Encoding.Default.GetString(tag.Tagid);
 
                         if (theTagid.Equals("TAG"))
                         {
@@ -185,10 +185,10 @@ namespace MusicManager
                     }
                 }
             }
-            dataGridView1.ItemsSource = objectMusic.GetSounds;
-            dataGridView1.Items.Refresh();
-            idmusic.Visibility = Visibility.Hidden;
-            idprogres.Visibility = Visibility.Hidden;
+            DataGridView1.ItemsSource = objectMusic.GetSounds;
+            DataGridView1.Items.Refresh();
+            Idmusic.Visibility = Visibility.Hidden;
+            Idprogres.Visibility = Visibility.Hidden;
         }
 
 
@@ -252,13 +252,13 @@ namespace MusicManager
         }
 
         // move window
-        private void Border_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        private void BorderMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
 
         // check input
-        private void textstud_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void CheckInputPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             TextBox text = (TextBox)sender;
             if ((Regex.IsMatch(e.Text, regex)) == false)
@@ -269,16 +269,16 @@ namespace MusicManager
         }
 
         // grid, output
-        private void dataGridView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DataGridViewSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems != null && e.AddedItems.Count > 0)
             {
                 //current object
-                var name = dataGridView1.SelectedCells[0];
-                var author = dataGridView1.SelectedCells[1];
-                var genre = dataGridView1.SelectedCells[2];
-                var format = dataGridView1.SelectedCells[3];
-                var path = dataGridView1.SelectedCells[4];
+                var name = DataGridView1.SelectedCells[0];
+                var author = DataGridView1.SelectedCells[1];
+                var genre = DataGridView1.SelectedCells[2];
+                var format = DataGridView1.SelectedCells[3];
+                var path = DataGridView1.SelectedCells[4];
 
                 var cellContent1 = name.Column.GetCellContent(name.Item);
                 var cellContent2 = author.Column.GetCellContent(author.Item);
@@ -287,26 +287,26 @@ namespace MusicManager
                 var cellContent5 = path.Column.GetCellContent(path.Item);
 
                 // show information
-                lab_name.Content = (cellContent1 as TextBlock)?.Text;
-                lab_author.Content = (cellContent2 as TextBlock)?.Text;
-                lab_genre.Content = "Жанр " + (cellContent3 as TextBlock)?.Text;
-                lab_format.Content = "Формат " + (cellContent4 as TextBlock)?.Text;
+                LabName.Content = (cellContent1 as TextBlock)?.Text;
+                LabAuthor.Content = (cellContent2 as TextBlock)?.Text;
+                LabGenre.Content = "Жанр " + (cellContent3 as TextBlock)?.Text;
+                LabFormat.Content = "Формат " + (cellContent4 as TextBlock)?.Text;
                 _playerUml = (cellContent5 as TextBlock)?.Text;
                 Wmp.URL = _playerUml;
                 Wmp.controls.pause();
                 timer.Enabled = true;
-                lab_music_stat.Content = "Playing";
+                LabMusicStat.Content = "Playing";
                 _pausePlay = false;
 
                 //for example :)
-                img.Source = (cellContent2 as TextBlock)?.Text == "Adriano Celentano" ? new BitmapImage(new Uri(@"C:\Users\Илья\Desktop\Searchmusic\Images\1.jpg")) : null;
+                Img.Source = (cellContent2 as TextBlock)?.Text == "Adriano Celentano" ? new BitmapImage(new Uri(@"C:\Users\Илья\Desktop\Searchmusic\Images\1.jpg")) : null;
             }
         }
-        private void Button_delete(object sender, RoutedEventArgs e)
+        private void ButtonClear(object sender, RoutedEventArgs e)
         {
             objectMusic.ClearCollection();
-            dataGridView1.ItemsSource = objectMusic.GetSounds;
-            dataGridView1.Items.Refresh();
+            DataGridView1.ItemsSource = objectMusic.GetSounds;
+            DataGridView1.Items.Refresh();
         }
 
         private void Close(object sender, RoutedEventArgs e)
@@ -314,35 +314,35 @@ namespace MusicManager
             Close();
         }
 
-        private void Window_Closed_1(object sender, EventArgs e)
+        private void WindowClose(object sender, EventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-       private void Button_Click(object sender, RoutedEventArgs e)
+       private void PausePlayClick(object sender, RoutedEventArgs e)
         {
             _pausePlay = !_pausePlay;
             if (_pausePlay)
             {
                 Wmp.controls.pause();
-                lab_music_stat.Content = "Paused";
+                LabMusicStat.Content = "Paused";
             }
             if (!_pausePlay)
             {
                 Wmp.controls.play();
-                lab_music_stat.Content = "Playing";
+                LabMusicStat.Content = "Playing";
             }
         }
 
-        private void slider1_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void SliderPreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            Wmp.controls.currentPosition = slider1.Value;
+            Wmp.controls.currentPosition = Slider1.Value;
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void MenuItemClick(object sender, RoutedEventArgs e)
         {
-            Oprog oprog = new Oprog();
-            oprog.Show();
+            About about = new About();
+            about.Show();
         }
     }
 }
